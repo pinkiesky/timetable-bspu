@@ -20,8 +20,8 @@ export interface DaySchedule {
 }
 
 export interface Lesson {
-  classroom: string;
+  classroom: string | null;
   name: string;
-  teacher: string;
+  teacher: string | null;
   type: string;
 }
