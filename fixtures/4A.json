@@ -1,0 +1,21 @@
+{
+  "lessons": [
+    null,
+    {
+      "classroom": "201",
+      "name": "Матан",
+      "teacher": "Якшина А. С.",
+      "type": "лаб."
+    },
+    null,
+    {
+      "classroom": "601",
+      "name": "Геометрия",
+      "teacher": "Ермак Н. С.",
+      "type": "лаб."
+    },
+    null,
+    null,
+    null
+  ]
+}
