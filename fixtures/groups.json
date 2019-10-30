@@ -1,0 +1,45 @@
+{
+  "id": "bspu",
+  "displayedName": "БГПУ",
+  "subgroup": [
+    {
+      "id": "stuff",
+      "displayedName": "Сотрудники",
+      "subgroup": [
+        {
+          "id": "surname_i",
+          "displayedName": "И",
+          "subgroup": [
+            {
+              "id": "Иванов И. И.",
+              "displayedName": "Иванов И. И."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "students",
+      "displayedName": "Студенты",
+      "subgroup": [
+        {
+          "id": "ФМФ",
+          "displayedName": "ФМФ",
+          "subgroup": [
+            {
+              "id": "4 курс",
+              "displayedName": "4 курс",
+              "subgroup": [
+                {
+                  "id": "4A",
+                  "displayedName": "4А",
+                  "subgroups": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
