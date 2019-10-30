@@ -1,12 +1,12 @@
-type ISODate = string;
+export type ISODate = string;
 
-interface Group {
+export interface Group {
   id: string;
   displayedName: string;
   subgroup: Group[] | null;
 }
 
-interface Schedule {
+export interface Schedule {
   from: ISODate;
   to: ISODate;
   groupId: string;
@@ -15,11 +15,11 @@ interface Schedule {
   days: DaySchedule[];
 }
 
-interface DaySchedule {
+export interface DaySchedule {
   lessons: (Lesson | null)[];
 }
 
-interface Lesson {
+export interface Lesson {
   classroom: string;
   name: string;
   teacher: string;
