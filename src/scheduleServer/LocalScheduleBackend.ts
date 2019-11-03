@@ -2,6 +2,7 @@ import { ScheduleBackend } from './types';
 import { Group, Schedule, DaySchedule } from '../externalTypes';
 import { promises as fs } from 'fs';
 import { join } from 'path';
+import { moment } from '../services/moment';
 
 const DEFAULT_FIXTURES_FOLDER = join(__dirname, '..', '..', 'fixtures');
 
@@ -29,13 +30,16 @@ export class LocalScheduleBackend implements ScheduleBackend {
     to: string,
     groupId: string,
   ): Promise<Schedule> {
-    const days = await this.loadFile<DaySchedule[]>(`${groupId}.json`);
+    const day = await this.loadFile<DaySchedule>(`${groupId}.json`);
+
+    const toMmt = moment(to);
+    const daysCount = toMmt.diff(from, 'days') + 1;
 
     return {
       from,
       to,
       groupId,
-      days,
+      days: new Array(daysCount).fill(day),
     };
   }
 }
