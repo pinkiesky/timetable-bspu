@@ -18,7 +18,7 @@ block content
         div ↓
         div= timeArr[1]
     each day, index in schedule.days
-      each lesson, li in day.lessons
+      each lesson, li in day
         .schedule-tile(style={
           'grid-column': index + 2,
           'grid-row': li + 2

@@ -15,9 +15,7 @@ export interface Schedule {
   days: DaySchedule[];
 }
 
-export interface DaySchedule {
-  lessons: (Lesson | null)[];
-}
+export type DaySchedule = (Lesson | null)[];
 
 export interface Lesson {
   classroom: string | null;
