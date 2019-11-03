@@ -1,5 +1,5 @@
 import { ScheduleBackend } from './types';
-import { Group, Schedule } from '../externalTypes';
+import { Group, Schedule, DaySchedule } from '../externalTypes';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 
@@ -12,15 +12,16 @@ export class LocalScheduleBackend implements ScheduleBackend {
     this.fixturesFolder = fixturesFolder;
   }
 
-  private loadFile(filename: string): Promise<string> {
-    return fs.readFile(join(this.fixturesFolder, filename), {
+  private async loadFile<T>(filename: string): Promise<T> {
+    const json = await fs.readFile(join(this.fixturesFolder, filename), {
       encoding: 'utf8',
     });
+
+    return JSON.parse(json);
   }
 
   async loadGroups(): Promise<Group> {
-    const data = await this.loadFile('groups.json');
-    return JSON.parse(data);
+    return this.loadFile<Group>('groups.json');
   }
 
   async loadSchedule(
@@ -28,8 +29,7 @@ export class LocalScheduleBackend implements ScheduleBackend {
     to: string,
     groupId: string,
   ): Promise<Schedule> {
-    const data = await this.loadFile(`${groupId}.json`);
-    const days = JSON.parse(data);
+    const days = await this.loadFile<DaySchedule[]>(`${groupId}.json`);
 
     return {
       from,
