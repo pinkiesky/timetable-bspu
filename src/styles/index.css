@@ -55,3 +55,9 @@ head {
   align-items: center;
   justify-content: center;
 }
+
+.schedule-tile_lesson-color0 { background-color: antiquewhite; }
+.schedule-tile_lesson-color1 { background-color: aqua; }
+.schedule-tile_lesson-color2 { background-color: azure; }
+.schedule-tile_lesson-color3 { background-color: bisque; }
+.schedule-tile_lesson-color4 { background-color: darkgoldenrod; }

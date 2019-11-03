@@ -5,6 +5,7 @@ import { moment } from './services/moment';
 import { LocalScheduleBackend } from './scheduleServer/LocalScheduleBackend';
 import { createReadStream } from 'fs';
 import { join } from 'path';
+import { lesson2index } from './services/lesson2index';
 
 const app = new Koa();
 const router = new Router();
@@ -43,7 +44,7 @@ router.get('/*', async (ctx) => {
     ['19:40', '21:10'],
   ];
 
-  ctx.body = render('index', { schedule, rangeDays, times });
+  ctx.body = render('index', { schedule, rangeDays, times, lesson2index });
 });
 
 app.use(router.routes());

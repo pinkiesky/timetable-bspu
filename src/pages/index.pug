@@ -24,6 +24,6 @@ block content
           'grid-row': li + 2
         })
           if lesson
-            .schedule-tile_lesson
+            .schedule-tile_lesson(class=`schedule-tile_lesson-color${lesson2index(lesson, 5)}`)
               div= lesson.name
               div= `${lesson.classroom}, ${lesson.teacher}`
