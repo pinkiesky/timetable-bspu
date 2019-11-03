@@ -1,0 +1,57 @@
+body,
+head {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #444;
+}
+
+.schedule-container {
+  display: grid;
+  grid-template-rows: 60px repeat(8, 100px);
+  grid-gap: 1px;
+
+  background-color: rgb(240, 240, 240);
+}
+
+.schedule-tile {
+  overflow: hidden;
+  /* background-color: cornsilk;
+  box-shadow: 3px 3px rgba(0, 0, 0, .2); */
+
+  background-color: white;
+}
+
+.schedule-tile_lesson {
+  overflow: hidden;
+  /* background-color: cornsilk;
+  box-shadow: 3px 3px rgba(0, 0, 0, .2); */
+
+  background-color: brown;
+
+  margin: 2px;
+  padding: 7px;
+  border-radius: 5px;
+
+  height: calc(100% - 4px - 14px);
+}
+
+.schedule-tile_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.schedule-tile_header-day {
+  font-size: 120%;
+}
+
+.schedule-tile_header-dow {
+  font-size: 80%;
+}
+
+.schedule-tile_time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

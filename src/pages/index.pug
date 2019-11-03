@@ -1,4 +1,29 @@
 extends layout
 
 block content
-  div I'm rendered successful!
+  .schedule-container(style={
+    'grid-template-columns': `60px repeat(${rangeDays.length}, 200px)`,
+  })
+    div
+    each day, index in rangeDays
+      .schedule-tile.schedule-tile_header
+        .schedule-tile_header-dow= day.format('D')
+        .schedule-tile_header-day= day.format('dd')
+    each timeArr, index in times
+      .schedule-tile.schedule-tile_time(style={
+          'grid-column': 1,
+          'grid-row': index + 2
+        })
+        div= timeArr[0]
+        div ↓
+        div= timeArr[1]
+    each day, index in schedule.days
+      each lesson, li in day.lessons
+        .schedule-tile(style={
+          'grid-column': index + 2,
+          'grid-row': li + 2
+        })
+          if lesson
+            .schedule-tile_lesson
+              div= lesson.name
+              div= `${lesson.classroom}, ${lesson.teacher}`
